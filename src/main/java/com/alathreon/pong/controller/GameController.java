@@ -17,6 +17,8 @@ public class GameController implements Controller<PlayerKind> {
     @FXML
     public Canvas canvas;
     @FXML
+    public AnchorPane gamePane;
+    @FXML
     public AnchorPane pauseMenu;
 
     private ViewManager manager;
@@ -67,6 +69,8 @@ public class GameController implements Controller<PlayerKind> {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        canvas.widthProperty().bind(gamePane.widthProperty());
+        canvas.heightProperty().bind(gamePane.heightProperty());
         pauseMenu.setVisible(false);
     }
 
